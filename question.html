@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Homework and Lab Assignment Interface</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(to right, #a40000, #800000);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: #a40000;
+        }
+
+        #taskDescription {
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #codeEditor {
+            margin: 20px;
+            border: 1px solid #ddd;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea {
+            width: calc(100% - 20px);
+            height: 300px;
+            padding: 10px;
+            font-family: monospace;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            resize: none;
+            outline: none;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            background-color: #a40000;
+            color: white;
+        }
+
+        #questionListToggle {
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            padding: 10px;
+            background-color: #a40000;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        #questionList {
+            position: fixed;
+            top: 50px;
+            left: 20px;
+            width: 250px;
+            background-color: white;
+            border: 1px solid #ccc;
+            display: none;
+            z-index: 1000;
+            overflow-y: auto;
+            max-height: 300px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-item {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .difficulty {
+            padding: 2px 5px;
+            border-radius: 4px;
+            color: white;
+        }
+
+        .medium {
+            background-color: #FFA500;
+        }
+
+        #accountAndChat {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            display: flex;
+            z-index: 1000;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #accountButton {
+            background-color: #a40000;
+            color: white;
+        }
+
+        #chatButton {
+            background-color: #800000;
+            color: white;
+        }
+
+        .editor-buttons {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+
+        .editor-buttons button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Question Bank
+    </header>
+
+    <nav>
+        <a href="file.html">Home</a>
+        <a href="#">Question list</a>
+        <a href="lab.html">Exam Centre</a>
+        <a href="techsuppor.html">Contact Us</a>
+
+    </nav>
+
+    <div id="taskDescription">
+        <h2>Task Description</h2>
+        <p>Please complete the code homework below.</p>
+    </div>
+
+    <div id="codeEditor">
+        <textarea placeholder="Write your code here..."></textarea>
+        <select>
+            <option>Python</option>
+            <option>JavaScript</option>
+            <option>Java</option>
+        </select>
+
+        <div class="editor-buttons">
+            <button>Run Code</button>
+            <button>Submit Code</button>
+        </div>
+    </div>
+
+    <button id="questionListToggle">Question List</button>
+
+    <div id="questionList">
+        <div class="question-item">
+            <span>Question 1</span>
+            <span class="difficulty medium">Medium</span>
+        </div>
+        <div class="question-item">
+            <span>Question 2</span>
+            <span class="difficulty medium">Medium</span>
+        </div>
+        <div class="question-item">
+            <span>Question 3</span>
+            <span class="difficulty medium">Medium</span>
+        </div>
+    </div>
+
+
+
+    <script>
+        const questionListToggle = document.getElementById('questionListToggle');
+        const questionList = document.getElementById('questionList');
+        questionListToggle.addEventListener('click', function() {
+            questionList.style.display = questionList.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Performance Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div>
+        <canvas id="performanceChart"></canvas>
+    </div>
+    <script>
+        // 假设从后端获取的数据
+        const data = {
+            labels: ['Student 1', 'Student 2', 'Student 3'],
+            datasets: [{
+                label: 'Exam Score',
+                data: [85, 90, 75],
+                backgroundColor: ['red', 'blue', 'green'],
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {}
+        };
+
+        const performanceChart = new Chart(
+            document.getElementById('performanceChart'),
+            config
+        );
+    </script>
+</body>
+</html>

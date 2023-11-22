@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>题库监控页面</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+    body {
+        font-family: 'Noto Sans SC', sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    nav {
+        background-color: #a6192e; /* 渥太华大学的红色 */
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+
+    nav a:hover {
+        background-color: #333;
+    }
+
+    #statsList {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+        background-image: url(images/2.jpg); /* 添加背景图片 */
+        background-size: cover; /* 背景图片覆盖整个页面 */
+    }
+
+    .stats-card {
+        width: 300px;
+        border: 1px solid #ddd;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .stats-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .stats-card h3 {
+        margin: 0;
+        padding: 10px;
+        background-color: #a6192e; /* 渥太华大学的红色 */
+        color: white;
+    }
+
+    .stats-card p {
+        padding: 10px;
+    }
+
+    .icon {
+        font-size: 2em;
+        color: #a6192e; /* 渥太华大学的红色 */
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#"><i class="fas fa-home"></i> Main</a>
+        <a href="gng4120.html"><i class="fas fa-chart-bar"></i> Monitoring</a>
+        <a href="#"><i class="fas fa-info-circle"></i> Student List</a>
+        <a href="techsuppor.html"><i class="fas fa-phone-alt"></i> Technical Support</a>
+    </nav>
+
+    <div id="statsList">
+        <!-- 统计数据列表 -->
+    </div>
+
+    <script>
+        const stats = [
+            {
+                title: 'Majority Element II',
+                correctRate: '70%',
+            },
+            {
+                title: 'Integer Break',
+                correctRate: '80%',
+            },
+            {
+                title: 'Palindrome Linked List',
+                correctRate: '75%',
+            },
+            {
+                title: 'First Bad Version',
+                correctRate: '85%',
+            },
+            {
+                title: 'Invert Binary Tree',
+                correctRate: '90%',
+            },
+            {
+                title: 'Two Sum',
+                correctRate: '95%',
+            },
+            {
+                title: 'Add Two Numbers',
+                correctRate: '60%',
+            },
+            {
+                title: 'Longest Substring Without Repeating Characters',
+                correctRate: '80%',
+            },
+            {
+                title: 'Median of Two Sorted Arrays',
+                correctRate: '70%',
+            },
+            {
+                title: 'Regular Expression Matching',
+                correctRate: '60%',
+            },
+            {
+                title: '3Sum',
+                correctRate: '85%',
+            },
+            {
+                title: 'Container With Most Water',
+                correctRate: '75%',
+            },
+            {
+                title: 'Integer to Roman',
+                correctRate: '70%',
+            },
+            {
+                title: 'Roman to Integer',
+                correctRate: '80%',
+            },
+            {
+                title: 'Longest Palindromic Substring',
+                correctRate: '90%',
+            },
+            {
+                title: 'Zigzag Conversion',
+                correctRate: '85%',
+            },
+            {
+                title: 'Reverse Integer',
+                correctRate: '90%',
+            },
+            {
+                title: 'String to Integer (atoi)',
+                correctRate: '85%',
+            },
+            {
+                title: 'Palindrome Number',
+                correctRate: '80%',
+            },
+            {
+                title: 'Regular Expression Matching',
+                correctRate: '75%',
+            },
+            {
+                title: 'Container With Most Water',
+                correctRate: '70%',
+            },
+        ];
+    
+        const statsList = document.getElementById('statsList');
+    
+        stats.forEach(stat => {
+            const card = document.createElement('div');
+            card.className = 'stats-card';
+            card.innerHTML = `<h3>${stat.title}</h3><p>CorrectRate:：${stat.correctRate}</p>`;
+            statsList.appendChild(card);
+        });
+    </script>
+    
+
+</body>
+
+</html>

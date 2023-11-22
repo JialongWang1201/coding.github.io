@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>examCompiler Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .left-side {
+            flex: 1;
+            background-color: #0056b3; /* 更改为您的品牌颜色 */
+            background-image: url('images/lab.png'); /* 替换为实际logo路径 */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .right-side {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 50px;
+            background-color: #ffffff; /* 添加白色背景 */
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+        }
+
+        .login-form {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .login-form input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #CCCCCC;
+            font-size: 16px;
+        }
+
+        .login-btn {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .login-btn:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left-side">
+        <!-- 这里是渥太华大学的logo -->
+    </div>
+    <div class="right-side">
+        <div class="login-form">
+            <h2>Student Login Portal</h2>
+            <input type="email" placeholder="Email Address">
+            <input type="password" placeholder="Password">
+            <label>
+                <input type="checkbox"> Remember me
+            </label>
+            <button class="login-btn" onclick="onLogin()">SIGN IN</button>
+            <a href="#">Forgot password?</a>
+        </div>
+        <footer>
+            Copyright &copy; examCompiler 2023.
+        </footer>
+    </div>
+    <script>
+        function onLogin() {
+            // 在这里设置要跳转的页面的 URL
+            window.location.href = "file.html";
+        }
+    </script>
+
+    
+</body>
+
+</html>

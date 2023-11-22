@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代码作业和Lab作业界面</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        #taskDescription {
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 80%; /* Set width to use percentage for responsive design */
+            max-width: 800px; /* Max width for large screens */
+        }
+
+        #codeEditor {
+            margin: 20px;
+            border: 1px solid #ddd;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 80%; /* Set width to use percentage for responsive design */
+            max-width: 800px; /* Max width for large screens */
+        }
+
+        textarea {
+            width: calc(100% - 20px);
+            height: 300px;
+            padding: 10px;
+            font-family: monospace;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            resize: none;
+            outline: none;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px; /* Rounded corners for buttons */
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease-in-out;
+            margin: 0 10px;
+        }
+
+        #questionListToggle {
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        #questionList {
+            position: fixed;
+            top: 60px;
+            left: 20px;
+            width: 250px;
+            background-color: white;
+            border: 1px solid #ccc;
+            z-index: 1000;
+            overflow-y: auto;
+            max-height: 300px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none; /* Hide by default */
+        }
+
+        .question-item {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .difficulty {
+            padding: 2px 5px;
+            border-radius: 4px;
+            color: white;
+        }
+
+        .medium {
+            background-color: #FFA500;
+        }
+
+        #accountAndChat {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            display: flex;
+            z-index: 1000;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #accountButton {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #chatButton {
+            background-color: #FFA500;
+            color: white;
+        }
+
+        .editor-buttons {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+
+        .editor-buttons button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="questionListToggle" onclick="toggleQuestionList()">
+        <span>Questions</span>
+        <span>&#x25BC;</span>
+    </div>
+
+    <div id="questionList">
+        <h2>Questions</h2>
+        <div class="question-list">
+            <div class="question-item">
+                <span>Majority Element II</span>
+                <span class="difficulty medium">Part1</span>
+            </div>
+            <div class="question-item">
+                <span>Integer Break</span>
+                <span class="difficulty medium">Part2</span>
+            </div>
+            <!-- ... 其他问题 ... -->
+        </div>
+    </div>
+
+    <div id="accountAndChat">
+        <button id="accountButton">Account</button>
+        <button id="chatButton">Chat with TA</button>
+    </div>
+
+    <div id="taskDescription">
+        <h2>Majority Element II</h2>
+        <p>
+            Given an integer array nums and an integer k, return the maximum sum of a non-empty subsequence of that array such that for every two consecutive integers in the subsequence, nums[i] and nums[j], where i < j, the condition j - i <= k is satisfied.
+        </p>
+        <p>
+            A subsequence of an array is obtained by deleting some number of elements (can be zero) from the array, leaving the remaining elements in their original order.
+        </p>
+        <h3>Example 1:</h3>
+        <p>
+            Input: nums = [10, 2, -10, 5, 20], k = 2 <br> Output: 37 <br> Explanation: The subsequence is [10, 2, 5, 20].
+        </p>
+        <h3>Example 2:</h3>
+        <p>
+            Input: nums = [-1, -2, -3], k = 1 <br> Output: -1 <br> Explanation: The subsequence must be non-empty, so we choose the largest number.
+        </p>
+        <h3>Example 3:</h3>
+        <p>
+            Input: nums = [10, -2, -10, -5, 20], k = 2 <br> Output: 23 <br> Explanation: The subsequence is [10, -2, -5, 20].
+        </p>
+        <h3>Constraints:</h3>
+        <ul>
+            <li>1 <= k <= nums.length <= 10^5</li>
+            <li>-10^4 <= nums[i] <= 10^4</li>
+        </ul>
+    </div>
+
+    <div id="codeEditor">
+        <h2>Code Editor</h2>
+        <textarea placeholder="Please tap your answer..."></textarea>
+        <select>
+            <option value="c">C</option>
+            <option value="cpp">C++</option>
+            <option value="java">Java</option>
+            <!-- 可以根据需要添加其他语言 -->
+        </select>
+        <<div class="editor-buttons">
+            <button>Run Tests</button>
+            <button onclick="submitAnswer()">Submit Answer</button>
+        </div>
+    </div>
+
+    <script>
+        // 获取 "My account" 按钮元素
+        const accountButton = document.getElementById('accountButton');
+
+        // 添加点击事件处理程序，以在按钮点击时执行页面跳转
+        accountButton.addEventListener('click', function() {
+            // 在这里设置要跳转的页面的 URL
+            window.location.href = "file.html";
+        });
+
+        const chatButton = document.getElementById('chatButton');
+
+        // 添加点击事件处理程序，以在按钮点击时执行页面跳转
+        chatButton.addEventListener('click', function() {
+            // 在这里设置要跳转的页面的 URL
+            window.location.href = "techsuppor.html";
+        });
+
+        function toggleQuestionList() {
+            const list = document.getElementById('questionList');
+            if (list.style.display === 'none' || list.style.display === '') {
+                list.style.display = 'block';
+            } else {
+                list.style.display = 'none';
+            }
+        }
+
+        function submitAnswer() {
+        // 弹出确认提交的提示框
+        var userChoice = confirm("Are you sure you want to submit?");
+        if (userChoice) {
+            // 如果用户确认提交，就会自动跳转到 file.html 页面
+            window.location.href = 'file.html'; // 修改为实际的路径
+        }
+    }
+    </script>
+
+</body>
+
+</html>

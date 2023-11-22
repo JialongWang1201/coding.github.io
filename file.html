@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .header {
+            background-color: #005792;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .course-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .course {
+            flex: 0 1 260px;
+            margin: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+        .course:hover {
+            transform: translateY(-5px);
+        }
+        .course h2 {
+            background-color: #007bff;
+            color: white;
+            margin: 0;
+            padding: 15px 20px;
+        }
+        .course p {
+            padding: 15px 20px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        .button {
+    display: block;
+    width: auto; /* Let the button size according to its content */
+    padding: 10px 20px;
+    margin: 10px auto;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px; /* Make the border radius larger to get pill-like buttons */
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    /* Optionally, you can add a box-shadow for a "raised button" effect on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Your Student Dashboard</h1>
+    </div>
+    <div class="course-container">
+        <div class="course">
+            <h2>ITI1120</h2>
+            <p>Introduction to Programming </p>
+            <a href="lab.html" class="button">Exam Centre</a>
+            <a href="question.html" class="button">Question Bank</a>
+        </div>
+        <!-- Additional courses can be added here -->
+        <div class="course">
+            <h2>ITI1121</h2>
+            <p>Introduction to Java</p>
+            <a href="lab.html" class="button">Exam Centre</a>
+            <a href="question.html" class="button">Question Bank</a>
+        </div>
+        <div class="course">
+            <h2>CSI2101</h2>
+            <p> Discrete Structures</p>
+            <a href="lab.html" class="button">Exam Centre</a>
+            <a href="question.html" class="button">Question Bank</a>
+        </div>
+    </div>
+</body>
+</html>
